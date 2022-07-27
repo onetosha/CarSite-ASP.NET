@@ -1,6 +1,8 @@
 using CarSite.DAL;
 using CarSite.DAL.Interfaces;
 using CarSite.DAL.Reprositories;
+using CarSite.Service.Implementations;
+using CarSite.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICarReprository, CarReprository>();
+builder.Services.AddScoped<ICarService, CarService>();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

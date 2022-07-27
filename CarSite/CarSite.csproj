@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CarSite.DAL\CarSite.DAL.csproj" />
     <ProjectReference Include="..\CarSite.Domain\CarSite.Domain.csproj" />
+    <ProjectReference Include="..\CarSite.Service\CarSite.Service.csproj" />
   </ItemGroup>
 
 </Project>

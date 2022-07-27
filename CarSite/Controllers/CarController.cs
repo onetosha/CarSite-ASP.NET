@@ -1,38 +1,24 @@
-﻿using CarSite.DAL.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using CarSite.Domain.Entity;
+﻿using Microsoft.AspNetCore.Mvc;
+using CarSite.Service.Interfaces;
 
 
 namespace CarSite.Controllers
 {
     public class CarController : Controller
     {
-        private readonly ICarReprository _carReprository;
-        public CarController(ICarReprository carReprository)
+        private readonly ICarService _carService;
+        public CarController(ICarService carService)
         {
-            _carReprository = carReprository;
+            _carService = carService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetCars()
         {
-            var response = await _carReprository.Select();
-            var response1 = await _carReprository.GetByName("VAZ");
-            var response2 = await _carReprository.Get(3);
-
-            var car = new Car()
-            {
-                id = 4,
-                Name = "Machine",
-                Model = "Good",
-                Speed = 150,
-                Price = 150030,
-                Description = "CarEntityDescription",
-                DateCreate = DateTime.Now
-            };
-
-            await _carReprository.Create(car);
-            await _carReprository.Delete(car);
-            return View(response);
+            var response = await _carService.GetCars();
+            if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                return View(response.Data);
+            return RedirectToAction("Error");
         }
     }
 }
