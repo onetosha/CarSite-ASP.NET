@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSite.DAL", "CarSite.DAL\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{CA211E29-71EF-446B-8D3A-6FF0AEFB0A74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSite.Service", "CarSite.Service\CarSite.Service.csproj", "{BEA33953-E779-4B2E-9E05-7990C3B7B11D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSite.Service", "CarSite.Service\CarSite.Service.csproj", "{BEA33953-E779-4B2E-9E05-7990C3B7B11D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
